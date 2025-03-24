@@ -2,7 +2,14 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import RepositoriesListItem from './RepositoriesListItem';
 
-function renderComponent() {
+// jest.mock('../tree/FileIcon.js', () => {
+//   //fake content of FileIcon.js
+//   return () => {
+//     return 'File Icon Component';
+//   };
+// });
+
+const renderComponent = () => {
   const repository = {
     full_name: 'facebook/react',
     language: 'Javascript',
@@ -18,7 +25,7 @@ function renderComponent() {
   );
 
   return { repository };
-}
+};
 
 test('shows a link to the github homepage for this repository', async () => {
   const { repository } = renderComponent();
