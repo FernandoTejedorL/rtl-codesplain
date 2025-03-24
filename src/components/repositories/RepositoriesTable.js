@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 
-function RepositoriesTable({ label, repositories, id }) {
+const RepositoriesTable = ({ label, repositories, id }) => {
+  console.log(repositories);
   const rendered =
     repositories &&
-    repositories.map((repo, i) => {
+    repositories.map((repo) => {
       return (
         <div key={repo.id} className="p-0.5">
           <Link
@@ -24,6 +25,6 @@ function RepositoriesTable({ label, repositories, id }) {
       {rendered}
     </div>
   );
-}
+};
 
 export default RepositoriesTable;
